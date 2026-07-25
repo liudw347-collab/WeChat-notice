@@ -1,0 +1,43 @@
+{
+  "_comment": "每日安全提醒自动化配置文件 - 定州市第八中学。首次使用前请修改群名为你真实的微信群名。",
+
+  "wechat": {
+    "_comment_open_method": "打开群的方式: 'search' = 用 Ctrl+F 搜索 (兼容老版微信, 微信4.x 可能失败); 'position' = 点击会话列表固定位置 (推荐! 需要每天提前打开两个群, 但100%可靠)",
+    "open_method": "position",
+
+    "_comment_search": "open_method=search 时使用这两个群名",
+    "class_group_name": "班级家长群",
+    "teacher_group_name": "班主任工作群",
+
+    "_comment_position": "open_method=position 时使用这两个位置",
+    "_comment_position_usage": "每天电脑开机后/微信重启后, 必须先手动操作: 1.鼠标点班级群 2.鼠标点班主任群. 这样班主任群=第1位(最近打开), 班级群=第2位",
+    "class_group_position": 2,
+    "teacher_group_position": 1
+  },
+
+  "schedule": {
+    "_comment": "发送时间。学校要求 8:00 前送达，预留缓冲后定为 7:30。",
+    "send_time": "07:30",
+    "_comment_retry": "失败重试配置。",
+    "max_retries": 3,
+    "retry_interval_sec": 60
+  },
+
+  "logs_dir": "logs",
+  "screenshots_dir": "screenshots",
+  "sent_records_file": "sent_records.json",
+
+  "alert": {
+    "_comment": "失败告警方式。弹窗+响铃最直接；可选邮件。",
+    "enable_popup": true,
+    "enable_sound": true,
+    "enable_email": false,
+    "email": {
+      "smtp_server": "smtp.qq.com",
+      "smtp_port": 465,
+      "smtp_user": "your_qq@qq.com",
+      "smtp_password": "授权码不是登录密码",
+      "to_addr": "your_qq@qq.com"
+    }
+  }
+}

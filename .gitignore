@@ -1,0 +1,14 @@
+# 依赖与运行产物
+__pycache__/
+*.pyc
+logs/
+screenshots/
+sent_records.json
+
+# IDE
+.vscode/
+.idea/
+
+# 系统
+.DS_Store
+Thumbs.db

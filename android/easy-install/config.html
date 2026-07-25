@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>定州市第八中学 · 安全提醒配置</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+h1 {
+    font-size: 20px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.subtitle {
+    color: #888;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.section {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+label .required { color: #e74c3c; }
+.hint {
+    font-size: 12px;
+    color: #95a5a6;
+    margin-top: 4px;
+}
+input[type="text"], input[type="time"], select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+.btn:active { transform: scale(0.98); }
+.btn-secondary {
+    background: #ecf0f1;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+.preview {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 13px;
+    color: #555;
+    margin-top: 16px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    font-family: -apple-system, sans-serif;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e1e8ed;
+}
+.alert {
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.alert-info { background: #e8f4fd; color: #2980b9; border-left: 3px solid #3498db; }
+.alert-warn { background: #fff8e1; color: #f57c00; border-left: 3px solid #ffc107; }
+.alert-success { background: #e8f5e9; color: #2e7d32; border-left: 3px solid #4caf50; }
+.alert-error { background: #ffebee; color: #c62828; border-left: 3px solid #f44336; }
+.toggle-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.toggle-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ecf0f1;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+.toggle-btn.active {
+    border-color: #667eea;
+    background: #f0f3ff;
+    color: #667eea;
+    font-weight: 600;
+}
+.code-block {
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 14px;
+    border-radius: 8px;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    overflow-x: auto;
+    margin-top: 12px;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+.hidden { display: none; }
+.divider {
+    height: 1px;
+    background: #ecf0f1;
+    margin: 20px 0;
+}
+.footer {
+    text-align: center;
+    color: #95a5a6;
+    font-size: 12px;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>定州市第八中学</h1>
+    <div class="subtitle">假期安全提醒 · 一键配置</div>
+
+    <div class="alert alert-info">
+        本页面用于生成配置文件。请按提示填写后, 将生成的内容保存即可。
+    </div>
+
+    <div class="section">
+        <label>班级微信群名 <span class="required">*</span></label>
+        <input type="text" id="class_group" placeholder="例如: 八年级3班家校群">
+        <div class="hint">务必与微信中显示完全一致 (含表情/空格/符号)</div>
+    </div>
+
+    <div class="section">
+        <label>班主任工作群名 <span class="required">*</span></label>
+        <input type="text" id="teacher_group" placeholder="例如: 八年级班主任群">
+        <div class="hint">截图发到这个群</div>
+    </div>
+
+    <div class="section">
+        <label>每日发送时间</label>
+        <input type="time" id="send_time" value="07:30">
+        <div class="hint">学校要求 8:00 前, 推荐 7:30 (留余量)</div>
+    </div>
+
+    <div class="section">
+        <label>失败告警方式</label>
+        <div class="toggle-group">
+            <div class="toggle-btn active" data-alert="vibrate">震动</div>
+            <div class="toggle-btn active" data-alert="notification">通知栏</div>
+        </div>
+    </div>
+
+    <button class="btn" onclick="generateConfig()">生成配置</button>
+    <button class="btn btn-secondary" onclick="previewMessage()">预览今日文案</button>
+
+    <div id="result" class="hidden">
+        <div class="divider"></div>
+        <div class="alert alert-success">
+            配置已生成! 请按以下步骤使用:
+        </div>
+
+        <label>步骤 1: 复制下面的配置内容</label>
+        <div class="code-block" id="config_json"></div>
+        <button class="copy-btn" onclick="copyText('config_json')">📋 复制配置</button>
+
+        <div style="margin-top: 16px;">
+            <label>步骤 2: 在 Termux 中执行下面命令</label>
+            <div class="code-block" id="install_cmd">python /storage/emulated/0/WeChat-notice/android/easy-install/save_config.py</div>
+            <button class="copy-btn" onclick="copyText('install_cmd')">📋 复制命令</button>
+        </div>
+    </div>
+
+    <div id="preview" class="hidden">
+        <div class="divider"></div>
+        <label>今日发送的文案预览:</label>
+        <div class="preview" id="preview_content"></div>
+    </div>
+
+    <div class="footer">
+        定州市第八中学 · 假期安全提醒自动化<br>
+        崇德 励志 和谐 进取 · 善教 好学 友爱 创新
+    </div>
+</div>
+
+<script>
+const WEEKDAY = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+
+function buildMessage(d) {
+    const dateStr = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+    const weekday = WEEKDAY[d.getDay()];
+    return `严谨治校  勤奋进取
+
+定州市第八中学假期安全提醒:
+       为确保同学们度过一个安全、健康的假期，特提醒以下注意事项：
+
+1. 交通安全
+      遵守交通规则，不闯红灯、不骑电动车，过马路走斑马线。乘坐正规车辆，不坐超载车、黑车，拒乘无牌无证车辆。
+
+2. 防溺水安全
+      禁止私自到水库、河道、池塘等危险水域玩耍或游泳。
+
+3. 居家安全
+       注意用火用电安全。独自在家时锁好门窗，不轻易给陌生人开门，遇到紧急情况及时联系家长或报警。
+
+4. 网络安全
+       警惕网络诈骗，不轻易点击陌生链接或转账，遇到可疑情况及时告知家长。
+
+5. 饮食卫生
+       注意饮食均衡，不暴饮暴食，少吃生冷、油炸食品。
+
+6. 心理健康
+       多与家人沟通交流，适当参加户外运动或兴趣活动，缓解学习压力。遇到问题及时向家长、老师或心理老师求助。
+
+温馨提示：
+       外出活动前告知家长去向。
+       注意天气变化，及时增减衣物，预防感冒。
+
+      安全无小事，防范于未然！祝同学们假期愉快，平安返校！
+
+崇德 励志 和谐 进取
+善教 好学 友爱 创新
+家校携手，共育共赢共未来!
+
+                   ${dateStr} ${weekday}
+           —— 定州市第八中学`;
+}
+
+function generateConfig() {
+    const classGroup = document.getElementById('class_group').value.trim();
+    const teacherGroup = document.getElementById('teacher_group').value.trim();
+    const sendTime = document.getElementById('send_time').value || '07:30';
+
+    if (!classGroup) {
+        alert('请输入班级微信群名');
+        return;
+    }
+    if (!teacherGroup) {
+        alert('请输入班主任工作群名');
+        return;
+    }
+    if (classGroup === teacherGroup) {
+        if (!confirm('班级群和班主任群名称相同, 确认吗?')) return;
+    }
+
+    const alerts = {};
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+        if (btn.classList.contains('active')) {
+            alerts['enable_' + btn.dataset.alert] = true;
+        }
+    });
+
+    const cfg = {
+        "_comment": "由 HTML 配置页面生成 - 定州市第八中学",
+        "wechat": {
+            "class_group_name": classGroup,
+            "teacher_group_name": teacherGroup
+        },
+        "schedule": {
+            "send_time": sendTime,
+            "max_retries": 3,
+            "retry_interval_sec": 60
+        },
+        "alert": Object.assign({
+            "enable_vibrate": true,
+            "enable_notification": true,
+            "enable_termux_notification": true
+        }, alerts)
+    };
+
+    document.getElementById('config_json').textContent = JSON.stringify(cfg, null, 2);
+    document.getElementById('result').classList.remove('hidden');
+    document.getElementById('result').scrollIntoView({behavior: 'smooth'});
+}
+
+function previewMessage() {
+    const today = new Date();
+    document.getElementById('preview_content').textContent = buildMessage(today);
+    document.getElementById('preview').classList.remove('hidden');
+    document.getElementById('preview').scrollIntoView({behavior: 'smooth'});
+}
+
+function copyText(id) {
+    const text = document.getElementById(id).textContent;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('已复制到剪贴板');
+        }).catch(() => fallbackCopy(text));
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand('copy');
+        alert('已复制到剪贴板');
+    } catch (e) {
+        alert('复制失败, 请手动选择文本复制');
+    }
+    document.body.removeChild(ta);
+}
+
+// 切换按钮
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+    });
+});
+</script>
+</body>
+</html>

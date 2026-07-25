@@ -1,0 +1,20 @@
+{
+  "_comment": "Android 版配置文件 - 定州市第八中学假期安全提醒",
+
+  "wechat": {
+    "class_group_name": "班级家长群",
+    "teacher_group_name": "班主任工作群"
+  },
+
+  "schedule": {
+    "send_time": "07:30",
+    "max_retries": 3,
+    "retry_interval_sec": 60
+  },
+
+  "alert": {
+    "enable_vibrate": true,
+    "enable_notification": true,
+    "enable_termux_notification": true
+  }
+}
